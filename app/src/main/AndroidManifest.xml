@@ -44,7 +44,8 @@
         <service
             android:name=".service.LocateService"
             android:enabled="true"
-            android:exported="false" />
+            android:exported="false"
+            />
         <service
             android:name=".service.LocateIntentService"
             android:exported="false"></service>
