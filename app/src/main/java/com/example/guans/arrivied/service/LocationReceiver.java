@@ -9,8 +9,6 @@ import android.content.Intent;
  */
 
 public class LocationReceiver extends BroadcastReceiver {
-
-
     private LocationReceiveListener mListener;
     public void setmListener(LocationReceiveListener mListener) {
         this.mListener = mListener;

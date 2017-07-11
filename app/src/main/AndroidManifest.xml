@@ -35,7 +35,6 @@
         <activity android:name=".view.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -44,11 +43,11 @@
         <service
             android:name=".service.LocateService"
             android:enabled="true"
-            android:exported="false"
-            />
-        <service
-            android:name=".service.LocateIntentService"
-            android:exported="false"></service>
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.example.guan.arrived.loctionservice.SERVICE_BIND" />
+            </intent-filter>
+        </service>
     </application>
 
 </manifest>
