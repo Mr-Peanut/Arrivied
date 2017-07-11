@@ -41,6 +41,8 @@ public class LocateService extends Service implements AMapLocationListener {
         mLocationOption.setLocationMode(AMapLocationClientOption.AMapLocationMode.Hight_Accuracy);
 //设置定位间隔,单位毫秒,默认为2000ms
         mLocationOption.setInterval(2000);
+        LOGUtil.logE(this, mLocationClient.toString());
+//        mLocationClient.startLocation();
 //设置定位参数
     }
 
@@ -83,6 +85,7 @@ public class LocateService extends Service implements AMapLocationListener {
 //            }
             locationResultIntent.putExtra("LocationResult", amapLocation);
             sendBroadcast(locationResultIntent);
+            LOGUtil.logE(this, amapLocation.getAddress());
 
         }
         LOGUtil.logE(this, "getLocationResult");

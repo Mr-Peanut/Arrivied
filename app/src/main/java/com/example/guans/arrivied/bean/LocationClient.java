@@ -21,18 +21,19 @@ public class LocationClient extends Binder {
     }
 
     public void startLocateOneTime() {
-        LOGUtil.logE(this, "startLocationOneTime");
         stopLocation();
+        LOGUtil.logE(this, mLocationClient.toString());
         mLocationOption.setOnceLocation(true);
         mLocationOption.setNeedAddress(true);
         mLocationClient.setLocationOption(mLocationOption);
+        mLocationClient.startLocation();
     }
 
     public void startLocateAlways() {
         stopLocation();
         mLocationOption.setOnceLocation(false);
         mLocationOption.setNeedAddress(false);
-        mLocationClient.setLocationOption(mLocationOption);
+        mLocationClient.startLocation();
     }
 
     public void startLocateAlways(long interval) {

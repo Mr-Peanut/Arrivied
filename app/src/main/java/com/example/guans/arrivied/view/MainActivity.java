@@ -50,6 +50,7 @@ public class MainActivity extends AppCompatActivity implements LocationReceiver.
     private void initReceiver() {
         if (receiver==null)
             receiver=new LocationReceiver();
+        receiver.setLocationListener(this);
         IntentFilter intentFilter = new IntentFilter(LocateService.ACTION_LOCATION_RESULT);
         registerReceiver(receiver,intentFilter);
     }
@@ -64,8 +65,10 @@ public class MainActivity extends AppCompatActivity implements LocationReceiver.
     }
     @Override
     protected void onDestroy() {
-        if(receiver!=null)
+        if (receiver != null) {
+            receiver.setLocationListener(null);
             unregisterReceiver(receiver);
+        }
         unbindService(locationServiceConnection);
         super.onDestroy();
     }
