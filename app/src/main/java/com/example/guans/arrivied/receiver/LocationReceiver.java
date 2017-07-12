@@ -1,4 +1,4 @@
-package com.example.guans.arrivied.service;
+package com.example.guans.arrivied.receiver;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;

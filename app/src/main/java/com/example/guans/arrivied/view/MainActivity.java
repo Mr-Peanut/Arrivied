@@ -15,7 +15,7 @@ import com.amap.api.location.AMapLocation;
 import com.example.guans.arrivied.R;
 import com.example.guans.arrivied.bean.LocationClient;
 import com.example.guans.arrivied.service.LocateService;
-import com.example.guans.arrivied.service.LocationReceiver;
+import com.example.guans.arrivied.receiver.LocationReceiver;
 import com.example.guans.arrivied.util.LOGUtil;
 
 public class MainActivity extends AppCompatActivity implements LocationReceiver.LocationReceiveListener {
