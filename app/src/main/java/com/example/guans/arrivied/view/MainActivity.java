@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity implements LocationReceiver.
         setContentView(R.layout.activity_main);
         initReceiver();
         bindLocationService();
-        findViewById(R.id.text).setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.city).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 locationClient.startLocateOneTime();
@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity implements LocationReceiver.
     public void onBroadcastReceive(Intent intent) {
         LOGUtil.logE(this, "onLocationResultReceive");
         AMapLocation result=intent.getParcelableExtra("LocationResult");
-        TextView textView=(TextView) findViewById(R.id.text);
+        TextView textView = findViewById(R.id.city);
         textView.setText(result.getAddress());
     }
     @Override

@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Arrivied</string>
+    <string name="city">定位城市</string>
 </resources>
